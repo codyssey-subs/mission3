@@ -1,10 +1,15 @@
 #mode_one.py
 
+from input_utils import *
+from utils import *
+from decide import *
+from mac_operation import *
+
 def mode_one():
     #필터A입력
     filter_a = input_matrix(3, "filter_a")
     #필터B입력
-    filter_a = input_matrix(3, "filter_b")
+    filter_b = input_matrix(3, "filter_b")
     #패턴 입력
     pattern = input_matrix(3, "pattern")
     #MAC 계산
@@ -22,7 +27,7 @@ def mode_one():
         avg_time = (avg_time_a + avg_time_b) / 2
     except Exception as e:
         #성능 측정 실패
-        return
+        exception_value_handler(e)
     #결과 출력
     print("\n#---------------------------------------")
     print("# [결과]")

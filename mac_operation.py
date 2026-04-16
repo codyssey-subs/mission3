@@ -1,5 +1,7 @@
 #mac_operation.py
 
+import time
+
 def mac_operation(pattern, filter):
     size = len(pattern)
     total = 0.0
