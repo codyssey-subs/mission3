@@ -1,6 +1,8 @@
 #main.py
 
+from mode_one import *
 from utils import *
+from input_utils import *
 
 def select_mode():
     print("\n=== Mini NPU Simulator ===")
@@ -25,8 +27,8 @@ def main():
     mode = select_mode()
 
     if mode == 1:
-        # mode_one()
-        print("mode_one()")
+        mode_one()
+        # print("mode_one()")
     elif mode == 2:
         # mode_two()
         print("mode_two()")
