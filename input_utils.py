@@ -1,4 +1,4 @@
-def input_matrix():
+def input_matrix(size, name):
     matrix = []
 
     print((f"\n{name} ({size}줄 입력, 공백 구분)"))
@@ -12,6 +12,7 @@ def input_matrix():
                     print(f"입력 형식 오류 : 각 줄에 {size}개의 숫자를 입력하세요.")
                     continue
                 row = [float(x) for x in row] # 숫자 변환
+                                            #float(sdf)등 터질 수도?   
                 matrix.append(row)
                 break
 
