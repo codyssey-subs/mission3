@@ -20,7 +20,17 @@ def input_matrix(size, name):
                 matrix.append(row)
                 break
 
-            except Exception as e:
-                exception_value_handler(e)
+            except ValueError:
+            #숫자 변환 실패, ex) 23a
+                print("\n⚠️ 잘못된 입력입니다. \n숫자를 입력하세요!")
+            except TypeError:
+                #숫자 변환 실패 ex) sdfs
+                print("\n⚠️ 잘못된 입력입니다. \n숫자를 입력하세요!")
+            except KeyboardInterrupt:
+                #Ctrl + C
+                print("\n⚠️ 잘못된 입력입니다. \nCtrl + C로 종료되지 않습니다!")
+            except EOFError:
+                #Ctrl + D
+                print("\n⚠️ 잘못된 입력입니다. \nCtrl + D로 안전 종료합니다!")
 
     return matrix

@@ -19,19 +19,30 @@ def select_mode():
                 return 2
             else:
                 print("\n⚠️ 잘못된 입력입니다!\n")
-        except Exception as e:
-                exception_input_handler(e)
+        except ValueError:
+            #숫자 변환 실패, ex) 23a
+            print("\n⚠️ 잘못된 입력입니다. \n숫자를 입력하세요!")
+        except TypeError:
+            #숫자 변환 실패 ex) sdfs
+            print("\n⚠️ 잘못된 입력입니다. \n숫자를 입력하세요!")
+        except KeyboardInterrupt:
+            #Ctrl + C
+            print("\n⚠️ 잘못된 입력입니다. \nCtrl + C로 종료되지 않습니다!")
+        except EOFError:
+            #Ctrl + D
+            print("\n⚠️ 잘못된 입력입니다. \nCtrl + D로 안전 종료합니다!")
 
 
 def main():
-    mode = select_mode()
+    while True:
+        mode = select_mode()
 
-    if mode == 1:
-        mode_one()
-        # print("mode_one()")
-    elif mode == 2:
-        # mode_two()
-        print("mode_two()")
+        if mode == 1:
+            mode_one()
+            # print("mode_one()")
+        elif mode == 2:
+            # mode_two()
+            print("mode_two()")
 
 if __name__ == "__main__":
     main()
